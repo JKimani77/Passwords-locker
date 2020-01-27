@@ -28,3 +28,22 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(self.new_credentials.account_name, "Google")
         self.assertEqual(self.new_credentials.account_password, "3344")
+
+    def test_save_credentials(self):
+        '''
+        test case to test if credentials objects have been saved
+        '''
+
+        self.new_credentials.save_credentials()  # save new user
+        self.assertEqual(len(Credentials.credentials_list), 1)
+
+    def test_delete_credentials(self):
+        '''
+        test delete credentials to test if we can remove a account from our list
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials("Google", "3344")
+        test_credentials.save_credentials()
+        self.new_credentials.delete_credentials()  # to delete a credentials   object
+        self.assertEqual(len(Credentials.credentials_list), 1)
