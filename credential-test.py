@@ -13,7 +13,7 @@ class TestCredentials(unittest.TestCase):
         set up method  that runs before each test case
         '''
 
-        self.new_credentials = Credentials("Google", "3344")
+        self.new_credentials = Credentials("Snapchat", "9876")
 
     def tearDown(self):
         '''
@@ -59,4 +59,16 @@ class TestCredentials(unittest.TestCase):
         # found_credentials = Credentials.find_by_number("0711491808")
         # self.assertEqual(found_credentials.credentials_name,
         #                  test_credentials.password)
+
+    def test_display_all_credentials(self):
+        '''
+        Test to check if all contacts can be viewed
+        '''
+
+        self.assertEqual(Credentials.display_credentials(),
+                         Credentials.credentials_list)
+
+
+if __name__ == '__main__':
+    unittest.main()
 
