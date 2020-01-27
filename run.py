@@ -253,3 +253,27 @@ def main():
                     break
             else:
                 print("Enter valid code to continue")
+
+        elif short_code == 'lg':
+            print("----- welcome -----")
+            print("----- Enter user name -----")
+            default_user_name = input()
+
+            print("----- Enter user name -----")
+            default_user_name = input()
+            print('\n')
+
+         while default_user_name != 'guest1' or default_user_password != '03903':
+             print(
+                 "*** Wrong userName or password. Username 'guest1' and password '03903' ****")
+             print("----- Enter user name -----")
+             default_user_name = input()
+
+             print("----- Enter password -----")
+             default_user_password = input()
+
+
+if __name__ == '__main__':
+
+    main()
+
