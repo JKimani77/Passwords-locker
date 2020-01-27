@@ -270,14 +270,16 @@ def main():
             default_user_name = input()
             print('\n')
 
-        while default_user_name != 'guest1' or default_user_password != '03903':
+        while default_user_name != 'guest1' :
              print(
                  "*** Wrong userName or password. Username 'guest1' and password '03903' ****")
              print("----- Enter user name -----")
              default_user_name = input()
-
-             print("----- Enter password -----")
-             default_user_password = input()
+# the commented lines below were the arguments for a function that confirms if the default_user_password 
+# matches but threw errors while running the code, thus had to be temporarily commented out.
+           
+           #  print("----- Enter password -----")
+           # default_user_password = input()
 
 
 if __name__ == '__main__':
