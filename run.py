@@ -118,6 +118,8 @@ def main():
                         print("*** Do you wish to continue? Y/N ***")
 
                         choice = input().lower()
+                        if choice == 'n':
+                            break
                         if choice == 'y':
                             print("-----------Enter account name-----------")
                             account_name = input()
@@ -157,6 +159,11 @@ def main():
                             break
                         else:
                             print("use 'y' for yes and 'n' for no")
+
+                            back = input().lower()
+
+                            if back == 'n':
+                                break
 
                 elif option == '1':
                     while True:
@@ -263,7 +270,7 @@ def main():
             default_user_name = input()
             print('\n')
 
-         while default_user_name != 'guest1' or default_user_password != '03903':
+        while default_user_name != 'guest1' or default_user_password != '03903':
              print(
                  "*** Wrong userName or password. Username 'guest1' and password '03903' ****")
              print("----- Enter user name -----")
