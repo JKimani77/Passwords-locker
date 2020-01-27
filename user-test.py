@@ -18,4 +18,4 @@ class TestUser(unittest.TestCase):
         method run before each test case
         '''
 
-        self.new_user = User("ramza", "password")
+        self.new_user = User("joshua", "password")
