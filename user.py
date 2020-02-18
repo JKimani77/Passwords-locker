@@ -12,7 +12,7 @@ class User:
 
     def save_user(self):
         '''
-        save_user method saves a new user objects to the user_list
+        function that saves new user objects to the user_list
         '''
 
         User.user_list.append(self)

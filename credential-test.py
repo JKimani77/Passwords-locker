@@ -19,7 +19,7 @@ class TestCredentials(unittest.TestCase):
         '''
          tear down method that does clean up after each test case has run.
         '''
-        Credentials.credentials_list = []
+        Credentials.cred_list = []
 
     def test_credentials_instance(self):
         '''
@@ -35,7 +35,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.new_credentials.save_credentials()  # save new user
-        self.assertEqual(len(Credentials.credentials_list), 1)
+        self.assertEqual(len(Credentials.cred_list), 1)
 
     def test_delete_credentials(self):
         '''
@@ -46,9 +46,9 @@ class TestCredentials(unittest.TestCase):
         test_credentials = Credentials("Snapchat", "9876")
         test_credentials.save_credentials()
         self.new_credentials.delete_credentials()  # to delete a credentials   object
-        self.assertEqual(len(Credentials.credentials_list), 1)
+        self.assertEqual(len(Credentials.cred_list), 1)
 
-    def test_find_credentials_by_name(self):
+    def test_getcredentials_by_name(self):
         '''
         test to check if credentials by the account name and can display information
         '''   
@@ -65,8 +65,8 @@ class TestCredentials(unittest.TestCase):
         Test to check if all contacts can be viewed
         '''
 
-        self.assertEqual(Credentials.display_credentials(),
-                         Credentials.credentials_list)
+        self.assertEqual(Credentials.show_credentials(),
+                         Credentials.cred_list)
 
 
 if __name__ == '__main__':

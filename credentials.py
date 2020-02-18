@@ -1,33 +1,50 @@
 class Credentials:
 
     '''
-    class that generates new instance credentials
+    class that generates new instance of credentials
     '''
 
     def __init__(self, account_name, account_password):
         self.account_name = account_name
         self.account_password = account_password
 
-    credentials_list = []
+    cred_list = []
 
     def save_credentials(self):
         '''
-        method that saves credentials objects into credentials list
+        function to save credential objects into list
         '''
 
-        self.credentials_list.append(self)
+        self.cred_list.append(self)
 
     def delete_credentials(self):
         '''
-        method that deletes a credential
+        deleting credentials
         '''
 
-        Credentials.credentials_list.remove(self)
+        Credentials.cred_list.remove(self)
+
 
     @classmethod
-    def find_by_name(cls, account_name):
+    def exists(cls, account_name):
         '''
-        a method that takes in a name and returns a credential that matches that name
+        func to check if credential exists
+        Args:
+            name: account_name to be searched
+        boolean:
+                true or false
+        '''
+
+        for credentials in cls.cred_list:
+            if credentials.account_name == account_name:
+                return True
+        return False
+
+
+    @classmethod
+    def getcredentials_by_name(cls, account_name):
+        '''
+        function that takes in a name and returns a credential that matches that name
 
         Args:
             name: account_name that has a password
@@ -36,28 +53,13 @@ class Credentials:
 
         '''
 
-        for credentials in cls.credentials_list:
+        for credentials in cls.cred_list:
             if credentials.account_name == account_name:
                 return credentials
 
     @classmethod
-    def credential_exists(cls, account_name):
+    def show_credentials(cls):
         '''
-        method to check if credential exists
-        Args:
-            name: account_name to be searched
-        boolean:
-                true or false
+        function that displays credentials
         '''
-
-        for credentials in cls.credentials_list:
-            if credentials.account_name == account_name:
-                return True
-        return False
-
-    @classmethod
-    def display_credentials(cls):
-        '''
-        method to display all current details
-        '''
-        return cls.credentials_list
+        return cls.cred_list

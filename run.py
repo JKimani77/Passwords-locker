@@ -28,14 +28,14 @@ def find_credential(account_name):
     method to find a credential that has been created
     '''
 
-    return Credentials.find_by_name(account_name)
+    return Credentials.getcredentials_by_name(account_name)
 
 
 def display_credential():
     '''
     method to dispay a credential that has been created
     '''
-    return Credentials.display_credentials()
+    return Credentials.show_credentials()
 
 
 def delete_credential(credentials):
@@ -151,9 +151,9 @@ def main():
 
                             else:
                                 print(" ****** Enter a valid code *****")
+                                save_new_credential(create_new_credential(account_name, account_password))
 
-                            # elif save_new_credential(create_new_credential(
-                            #     account_name, account_password))
+                            #elif save_new_credential(create_new_credential(account_name, account_password))
 
                         elif choice == 'cp':
                             break
