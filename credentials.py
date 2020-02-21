@@ -10,19 +10,20 @@ class Credentials:
 
     cred_list = []
 
-    def save_credentials(self):
-        '''
-        function to save credential objects into list
-        '''
-
-        self.cred_list.append(self)
-
     def delete_credentials(self):
         '''
         deleting credentials
         '''
 
         Credentials.cred_list.remove(self)
+
+
+    def save_credentials(self):
+        '''
+        function to save credential objects into list
+        '''
+
+        self.cred_list.append(self)
 
 
     @classmethod

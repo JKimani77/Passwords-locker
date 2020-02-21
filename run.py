@@ -7,49 +7,31 @@ from credentials import Credentials
 
 
 def create_new_credential(account_name, account_password):
-    '''
-    method that creates  new  account name
-    '''
     new_credential = Credentials(account_name, account_password)
 
     return new_credential
 
 
 def save_new_credential(credentials):
-    '''
-    method to save new credentials
-    '''
-
     credentials.save_credentials()
 
 
 def find_credential(account_name):
-    '''
-    method to find a credential that has been created
-    '''
-
     return Credentials.getcredentials_by_name(account_name)
 
 
 def display_credential():
-    '''
-    method to dispay a credential that has been created
-    '''
     return Credentials.show_credentials()
 
 
 def delete_credential(credentials):
-    '''
-    method to delete a credential that has been created
-    '''
-
     return Credentials.delete_credentials(credentials)
 
 def main():
     print('\n')
     while True:
         print(
-            "********************  Welcome to password locker!!! ********************"
+            "***********  Welcome to password locker!!! ************"
         )
         print('\n')
         print("""Use these short codes to navigate: \n "nu"- add new user \n "lg"-login to your created account \n "ex"-to exit the system""")
@@ -128,7 +110,7 @@ def main():
                                 "** I can create a password for if you type in - 'rp' \n** Or create your own password with - 'cp'")
                             keyword = input().lower()
 
-                            # Generates the random digit number
+                            # from random module we use randint method
                             if keyword == 'rp':
                                 account_password = random.randint(
                                     11111, 111111)
